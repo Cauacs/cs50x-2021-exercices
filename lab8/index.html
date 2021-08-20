@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+        <script>
+
+            // TODO: Add code to check answers to questions
+
+            document.addEventListener('DOMContentLoaded', function(){
+                let um = document.querySelector('#um');
+                let dois = document.querySelector('#dois');
+                let tres = document.querySelector('#tres');
+                let quatro = document.querySelector('#quatro');
+                let text = document.querySelector('#txt');
+
+                document.querySelector('#um').onclick = function() {
+                    um.style.backgroundColor = 'red';
+                    text.innerHTML = 'Incorrect';
+                    text.style.color = 'red';
+                }
+                document.querySelector('#dois').onclick = function() {
+                    dois.style.backgroundColor = 'red';
+                    text.innerHTML = 'Incorrect';
+                    text.style.color = 'red';
+                }
+                document.querySelector('#tres').onclick = function() {
+                    tres.style.backgroundColor = 'green';
+                    text.innerHTML = 'Correct';
+                    text.style.color = 'Green';
+                }
+                document.querySelector('#quatro').onclick = function() {
+                    quatro.style.backgroundColor = 'red';
+                    text.innerHTML = 'Incorrect';
+                    text.style.color = 'red';
+                }
+
+                let text1 = document.querySelector('#umtxt');
+                let input = document.querySelector('#input');
+
+                document.querySelector('#campo').onsubmit = function() {
+                    if (document.querySelector('#input').value === 'cavalo')
+                    {
+                        input.style.backgroundColor = 'green';
+                        text1.innerHTML = "Correct";
+                        text1.style.color = 'green';
+                        return false;
+                    }
+
+                    else
+                    {
+                        input.style.backgroundColor = 'red';
+                        text1.innerHTML = 'Incorrect';
+                        text1.style.color = 'red';
+                        return false;
+                    }
+                }
+
+
+            })
+
+
+
+        </script>
+
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+
+                <!-- TODO: Add multiple choice question here -->
+                <h3>QUESTIONNNNn</h3>
+                <h4 id="txt"></h4>
+
+                <button id="um">1</button>
+                <button id="dois">2</button>
+                <button id="tres">3</button>
+                <button id="quatro">4</button>
+
+
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+
+                <!-- TODO: Add free response question here -->
+                <h3>Questtttttttttttttttt</h3>
+                <h4 id = "umtxt"></h4>
+                <form id = "campo">
+                    <input id="input" type="text">
+                    <input type="submit">
+                </form>
+
+            </div>
+
+        </div>
+    </body>
+</html>

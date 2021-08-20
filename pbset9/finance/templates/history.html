@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+
+{% block main %}
+
+    <table>
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Transacted</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+                {% for stock in stocks%}
+                <tr>
+                  <td> {{ stock["stock_name"] }} </td>
+                  <td> {{ stock["num_shares"] }}</td>
+                  <td> {{ stock["price"] }}</td>
+                  <td> {{ stock["time"] }}</td>
+                </tr>
+                {% endfor %}
+
+        </tbody>
+    </table>
+
+{% endblock %}
